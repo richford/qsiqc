@@ -1,0 +1,30 @@
+{
+    "creators": [
+        {
+            "affiliation": "The University of Washington, eScience Institute",
+            "name": "Richie-Halford, Adam",
+            "orcid": "0000-0001-9276-9084"
+        },
+        {
+            "affiliation": "The University of Washington, Department of Psychology",
+            "name": "Rokem, Ariel",
+            "orcid": "0000-0003-0679-1985"
+        }
+    ],
+    "license": "BSD-3-Clause",
+    "title": "QSIQC: Predict diffusion MRI quality ratings",
+    "related_identifiers": [
+        {
+            "scheme": "url",
+            "identifier": "https://github.com/richford/hbn-pod2-qc",
+            "relation": "isPartOf",
+            "resource_type": "software"
+        }
+    ],
+    "keywords": [
+        "neuroimaging",
+        "dMRI",
+        "quality control"
+    ],
+    "upload_type": "software"
+}
