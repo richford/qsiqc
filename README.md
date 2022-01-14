@@ -7,8 +7,8 @@ control (QC) ratings for preprocessed diffusion MRI data.
 
 ## Input
 
-The QC model expects an input
-CSV file containing automated QC metrics from QSIPrep. The CSV must contain at
+The QC model expects an input CSV file containing automated QC metrics from
+[QSIPrep](https://qsiprep.readthedocs.io/en/latest/). The CSV must contain at
 least the following columns:
 
 - subject_id
