@@ -6,9 +6,9 @@ COPY requirements.txt /home/requirements.txt
 RUN pip install -r /home/requirements.txt
 
 COPY saved_models /usr/local/bin/saved_models
-COPY app.py /usr/local/bin/app.py
-RUN chmod +x /usr/local/bin/app.py 
+COPY predict_ratings.py /usr/local/bin/predict_ratings.py
+RUN chmod +x /usr/local/bin/predict_ratings.py 
 
 WORKDIR /home
 
-ENTRYPOINT ["app.py"]
+ENTRYPOINT ["predict_ratings.py"]
