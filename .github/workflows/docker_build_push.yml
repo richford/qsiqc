@@ -33,5 +33,5 @@ jobs:
           password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Push QSIQC docker image
-        if: github.ref == 'refs/heads/master' || startsWith(github.event.ref, 'refs/tags')
+        if: github.ref == 'refs/heads/main' || startsWith(github.event.ref, 'refs/tags')
         run: sh ./docker_ci_scripts/docker-push.sh "richford"
