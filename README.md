@@ -55,18 +55,10 @@ to upload your CSV file and view and download the generated QC scores.
 
 ### Docker-based QC prediction
 
-Build the supplied Docker image
+You may then execute the QSIQC docker container from any directory
 
 ```bash
-git clone https://github.com/richford/qsiqc.git
-cd qsiqc
-docker build -t qsiqc:latest .
+docker run --rm -v "$PWD":/home ghcr.io/richford/qsiqc example_dwiqc.csv
 ```
 
-You may then execute the docker container from any directory
-
-```bash
-docker run --rm -v "$PWD":/home qsiqs example_dwiqc.csv
-```
-
-where you should replace `example_dwiqc.csv` with the name of your input CSV file.
+where you should replace `example_dwiqc.csv` with the name of your input CSV file. This will use the default tag `latest`. To use a different tag, append the tag name to the image name, e.g. `ghcr.io/richford/qsiqc:v0.1`
