@@ -55,7 +55,7 @@ to upload your CSV file and view and download the generated QC scores.
 
 ### Docker-based QC prediction
 
-You may then execute the QSIQC docker container from any directory
+You may execute the QSIQC docker container from any directory
 
 ```bash
 docker run --rm -v "$PWD":/home ghcr.io/richford/qsiqc example_dwiqc.csv
