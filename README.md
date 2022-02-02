@@ -1,6 +1,7 @@
 # QSIQC: Predict diffusion MRI quality ratings
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://share.streamlit.io/richford/qsiqc/main/app.py)
+[![DOI](https://zenodo.org/badge/447413505.svg)](https://zenodo.org/badge/latestdoi/447413505)
 
 This repository hosts a web app and docker image to calculate predicted quality
 control (QC) ratings for preprocessed diffusion MRI data.
