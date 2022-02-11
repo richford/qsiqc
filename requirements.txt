@@ -1,12 +1,5 @@
-argon2-cffi==21.3.0
-argon2-cffi-bindings==21.2.0
-astor==0.8.1
-backcall==0.2.0
-base58==2.1.1
-cffi==1.14.3
-click==7.1.2
+click==8.0.3
 pandas==1.4.0
 scikit-learn==1.0.2
-sklearn
 streamlit==1.5.1
 xgboost==1.5.2
