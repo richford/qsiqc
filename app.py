@@ -3,6 +3,7 @@
 import pandas as pd
 import streamlit as st
 import time
+import json
 
 from predict_ratings import predict_ratings
 
@@ -15,8 +16,15 @@ def input_detected():
 
 
 @st.cache
-def load_data(input_csv):
-    return pd.read_csv(input_csv, index_col="subject_id")
+def load_data(input_file):
+    if input_file.endswith(".csv"):
+        df = pd.read_csv(input_file, index_col="subject_id")
+    elif input_file.endswith(".json"):
+        with open(input_file) as f:
+            dd = json.loads(f.read())
+            df = pd.DataFrame(dd["subjects"])
+            df = df.set_index("subject_id")
+    return df
 
 
 @st.cache
