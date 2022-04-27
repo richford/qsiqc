@@ -3,6 +3,7 @@
 import pandas as pd
 import streamlit as st
 import time
+import json
 
 from predict_ratings import predict_ratings
 
@@ -15,8 +16,15 @@ def input_detected():
 
 
 @st.cache
-def load_data(input_csv):
-    return pd.read_csv(input_csv, index_col="subject_id")
+def load_data(input_file):
+    if input_file.endswith(".csv"):
+        df = pd.read_csv(input_file, index_col="subject_id")
+    elif input_file.endswith(".json"):
+        with open(input_file) as f:
+            dd = json.loads(f.read())
+            df = pd.DataFrame(dd["subjects"])
+            df = df.set_index("subject_id")
+    return df
 
 
 @st.cache
@@ -76,7 +84,8 @@ st.write(
 # Input your csv
 st.sidebar.header("Upload your QSIPrep QC metrics")
 uploaded_file = st.sidebar.file_uploader(
-    "Upload your input CSV file", type=["csv"], on_change=input_detected
+    "Upload your input CSV/JSON file",
+    type=["csv", "json"], on_change=input_detected
 )
 if st.sidebar.button("or click here to use an example dataset"):
     uploaded_file = (
@@ -90,7 +99,7 @@ if st.sidebar.button("or click here to use an example dataset"):
 ######################################
 
 if uploaded_file is None:
-    st.info("Awaiting input CSV file...")
+    st.info("Awaiting input CSV/JSON file...")
 else:
     if not st.session_state.example:
         display_input_output(uploaded_file)
